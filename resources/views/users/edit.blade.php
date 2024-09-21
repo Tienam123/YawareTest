@@ -21,7 +21,7 @@
                                for="email">
                             Name
                         </label>
-                        <input class="border-input bg-background mt-1 ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        <input class="@if($errors->has('name')) border-red-600 @endif border-input bg-background mt-1 ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                id="name"
                                type="text"
                                placeholder="Enter your name"
@@ -33,7 +33,7 @@
                         @endif
 
                         {{--E-mail--}}
-                        <label class="inline-block mt-5 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        <label class="@if($errors->has('email')) border-red-600 @endif inline-block mt-5 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                for="email">
                             E-Mail
                         </label>
@@ -49,7 +49,7 @@
                         @endif
 
                         {{--Password--}}
-                        <label class="inline-block mt-5 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        <label class="@if($errors->has('password')) border-red-600 @endif inline-block mt-5 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                for="password">
                             Password
                         </label>
@@ -63,7 +63,7 @@
                         @endif
 
                         {{--Password Confirmation--}}
-                        <label class="inline-block mt-5 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        <label class="@if($errors->has('password_confirmation')) border-red-600 @endif inline-block mt-5 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                for="password_confirmation">
                             Password Confirm
                         </label>

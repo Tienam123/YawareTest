@@ -24,7 +24,8 @@
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <td class="py-4 px-6">{{$user->name}}</td>
                                 <td class="py-4 px-6">{{$user->email}}</td>
-                                <td class="py-4 px-6">{{$user->roles[0]->name}}</td>
+
+                                <td class="py-4 px-6">@foreach($user->roles as $role){{$role->name}}@endforeach</td>
                                 <td class="py-4 px-6 flex items-center gap-3">
                                     <a href="{{route('admin.users.edit',$user->id)}}" class="text-orange-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
@@ -45,7 +46,11 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    @if ($users->total() > $users->count())
+                                    <div class="mt-5">
+                                        {{ $users->links() }}
+                                    </div>
+                    @endif
                 </div>
             </div>
         </div>
